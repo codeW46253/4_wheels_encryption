@@ -13,8 +13,10 @@
 
 alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!@#$%^&*()-_=+[]{}<>|\'\";:/?., \n\t"
 alpha_list = []
+alpha_len = 0
 for index in range(len(alpha)):
     alpha_list.append(alpha[index])
+	alpha_len += 1
 
 wheel_1 = ['Q', 'U', '_', '\n', '<',
            '+', '-', ')', ';', 'F',
