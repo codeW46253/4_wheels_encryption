@@ -1,6 +1,15 @@
 
-
-
+# Encryption Wheel
+#
+# This file is important for encryption and decryption
+# system.
+#
+# You can change characters in "alpha" as input table's character availability
+# for fist swapping steps. all other "wheel" can be change for the next swapping
+# steps.
+#
+# You can change each wheel in "random_arrangement_generator.py"
+#
 
 alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!@#$%^&*()-_=+[]{}<>|\'\";:/?., \n\t"
 alpha_list = []
@@ -69,26 +78,25 @@ wheel_4 = ['#', '@', '>', '{', '2',
 ################################################################################################
 
 if __name__=="__main__":
+    # test for encryption wheel
+    len_test = False # check lenght of each wheels items
+    content_test = False # print out all items in all wheel
+    PO2_test = False # print out percentage of availability for each wheels to main wheel[alpha]
+    availability_test = False # test availability of an item in each wheels
     
-    
-    # debug
-    len_test = False
-    content_test = False
-    PO2_test = False
-    availability_test = False
-    
-    start_debug = len_test or content_test or PO2_test or availability_test
-    
-    if start_debug:
-        print("DEBUG MODE [ACTIVE]")
+    # start test mode
+    if len_test or content_test or PO2_test or availability_test:
+        print("TEST MODE ACTIVE")
         
+    # if all tests not activated, item search will be activate in a loop
     else:
         while True:
             find = input("Search by [I]ndex or [C]haracter?\n>>>")[0].lower()
+			
+			# search by index
             if find == "i":
                 find_index = int(input(f"Enter integer between 0 to {len(alpha_list)}: "))
-                print(f"""
-Index of {find_index}
+                print(f"""Index of {find_index}
 Main Wheel: {alpha_list[find_index]}
 Wheel 1   : {wheel_1[find_index]}
 Wheel 2   : {wheel_2[find_index]}
@@ -96,6 +104,7 @@ Wheel 3   : {wheel_3[find_index]}
 Wheel 4   : {wheel_4[find_index]}
     """)
                 
+			# search by index
             if find == "c":
                 find_char = input(f"Enter character: ").upper()
                 
@@ -152,3 +161,8 @@ Wheel 4   : {wheel_4.index(find_char)}
                 in_wheel_4 = True
             
             print(f"{str(item)} in:\nWheel 1: {in_wheel_1}\nWheel 2: {in_wheel_2}\nWheel 3: {in_wheel_3}\nWheel 4: {in_wheel_4}\n")
+			
+			
+			
+			
+			
