@@ -34,7 +34,8 @@ of all wheels [main, 1, 2, 3 and 4]
 For setting the referencing wheels, you can follow this:
 
 |Read from | Read to|
-|:........:|:......:|
+|:.........|.......:|
+|wheel 1 | Wheel 2|
 
 
 
