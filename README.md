@@ -104,7 +104,7 @@ inversed in `decryptor.py`.
 
 For setting the referencing wheels, you can follow this:
 
-|Steps|Read from|Read to|
+|Steps|Read from|Read to|Lock bit|Shift Key|
 |:---|:---|:---|
 |1|`Main wheel`|`Wheel 2`|
 |2|`wheel 1`|`Wheel 2`|
@@ -115,7 +115,7 @@ For setting the referencing wheels, you can follow this:
 ### Setting the `self.order_lenght` method:
 
 This method only preserves the limit of encryption or decryption proccesses's steps. This method should be setted the same
-as number of all wheels \[main, 1, 2, 3 and 4]
+as number wheels \[main, 1, 2, 3 and 4]
 
 
 
