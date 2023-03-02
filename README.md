@@ -5,9 +5,9 @@ v0.0.1
 Time created: Thursday - 2/3/2023
 
 Minimum requirement:
-- Free storage: 2Gb
-- RAM         : 1Gb
-- CPU         : Any single core 1.0GHz
+- **Free storage: 2Gb**
+- **RAM         : 1Gb**
+- **CPU         : Any single core 1.0GHz**
 
 #################################################################################################################
 
