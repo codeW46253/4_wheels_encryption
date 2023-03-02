@@ -16,8 +16,9 @@ import wheel_setup
 #   
 #   3) enter 3 level shift key [main lock for encryption] only arround 0<= x <= lenght
 #      of main character's arrangement
-#   4) call "decryption" function from "Decryptor" class and push your code, shift key
+#   4) call "decryption" function from "Decryptor" class and push your code, shift keys
 #      and special key [produced by encryption of text/code]
+#
 #
 ################################################################################################
 
@@ -107,12 +108,10 @@ class Decryptor:
                                        self.order[3][j],
                                        single_pswrd,
                                        self.order[2][0])
-                dcr_alpha = result
                 
                 self.order_setting() # update order setting
             
-            print("\n")
-            decrypted += dcr_alpha
+            decrypted += result
             
             # incrementer
             self.encr_key1 += 1
@@ -137,9 +136,12 @@ if __name__=="__main__":
     system_selected.wheel_setting(0,1,2,3)
     system_selected.key_setting(0, 0, 0)
     
-    decrypted = system_selected.decryption("",
-                                           [])
+    decrypted = system_selected.decryption("", # text to decrypt
+                                           []) # additional key
     
-    print(decrypted)
+    print(f"Decrypted text: {decrypted}")
 
 
+
+    
+    
