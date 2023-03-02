@@ -40,9 +40,7 @@ Minimum requirement:
    add `bit_5` to `create_additional_key`
 15) search for final character from `main_wheel`
 
-Repeat from start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght
-of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to
-`shift_key_2` and `shift_key_3`.
+Repeat from start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to `shift_key_2` and `shift_key_3`.
 
 ## Decryption of an encrypted text is following this step:
 1) search for the first character in `main_wheel`
@@ -66,18 +64,13 @@ of `main_wheel`, take the remainder of the total divided by `main_wheel` and add
    if `additional_key` & `lock_bit_5` not equal to 0, add index and lenght of `main_wheel`
 15) search for final character from `main_wheel`
 
-Repeat from start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght
-of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to
-`shift_key_2` and `shift_key_3`.
+Repeat from start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to `shift_key_2` and `shift_key_3`.
 
-**At the end of encryption, you will get the encrypted text and a list of additional key for each individual
-characters. The decryption step will ask for encrypted text and a list of additional key to decrypt the text.
-The encryption and decryption process wiil be succesful if the wheels combination and shift keys are correct.**
+**At the end of encryption, you will get the encrypted text and a list of additional key for each individual characters. The decryption step will ask for encrypted text and a list of additional key to decrypt the text. The encryption and decryption process wiil be succesful if the wheels combination and shift keys are correct.**
 
 ## Understanding the `order_setting` function in `Encryptor` and `Decryptor` classes:
 
-The function are used **to call back and reset *system refrence wheels, shift key and lock bit*** for encryption and decryption
-proccesses. It also **set the lenght of run limit** for encryption and decryption proccesses.
+The function are used **to call back and reset *system refrence wheels, shift key and lock bit*** for encryption and decryption proccesses. It also **set the lenght of run limit** for encryption and decryption proccesses.
 
 The function consist of `self.order` and `self.order_lenght` as the back bone of the proccesses.
 
@@ -92,12 +85,12 @@ You can adjust the order of referencing wheels by following this structure:
 \[ **Shift key** ]
 ]
 
-|Tag|Description|
-|:---|:---|
-|`Read from`|Enter the list of a wheel as a reference to find the character's index|
-|`Read to`|Enter the list of a wheel as a reference to find a new character|
-|`Lock bit`|\[***Don't adjust***] A reference bit to create/use an `additional_key`|
-|`Shift key`|Enter the list of `shift_key`|
+|Tag|Description|Allowed Value|
+|:---|:---|:---:|
+|`Read from`|Enter the list of a wheel as a reference to find the character's index|List(str)|
+|`Read to`|Enter the list of a wheel as a reference to find a new character|List(str)|
+|`Lock bit`|\[***Don't adjust***] A reference bit to create/use an `additional_key`|List(Int)|
+|`Shift key`|Enter the list of `shift_key`|List(Int \[0-lenght of `main_wheel`])|
 
 Lock bit can be edited only if you want to add or delete a step and should be different from each other. It also should be
 inversed in `decryptor.py`.
@@ -105,12 +98,12 @@ inversed in `decryptor.py`.
 For setting the referencing wheels, you can follow this:
 
 |Steps|Read from|Read to|Lock bit|Shift Key|
-|:---|:---|:---|
-|1|`Main wheel`|`Wheel 2`|
-|2|`wheel 1`|`Wheel 2`|
-|3|`wheel 3`|`Wheel 4`|
-|4|`wheel 3`|`Wheel 2`|
-|5|`Wheel 1`|`Main wheel`|
+|:---|:---|:---|:---:|:---:|
+|1|`Main wheel`|`Wheel 2`|0b00001|2: `shift_key_1`|
+|2|`wheel 1`|`Wheel 2`|0b00010|3: `shift_key_2`|
+|3|`wheel 3`|`Wheel 4`|0b00100|0: `shift_key_3`|
+|4|`wheel 3`|`Wheel 2`|0b01000|3: `shift_key_2`|
+|5|`Wheel 1`|`Main wheel`|0b10000|2: `shift_key_1`|
 
 ### Setting the `self.order_lenght` method:
 
