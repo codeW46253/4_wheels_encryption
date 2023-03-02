@@ -18,8 +18,11 @@ Wheel encryption is an encryption that taking a set of wheels to swapping alphab
 ## Encryption of a text is following this step:
 1) search for the first character in a `main_wheel`
 2) add the `shift_key_1` and the **index** of the **first character**
+   
    if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   
    add `bit_1` to `create_additional_key`
+   
 3) search for a new character from `Wheel 1`
 4) use the selected character and search for the character in `wheel_2`
 5) add the `shift_key_2` and the index of the new character
