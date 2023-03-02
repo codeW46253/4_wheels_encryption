@@ -4,10 +4,10 @@
 v0.0.1
 Thursday - 2/3/2023
 
-***Minimum requirement:***
-***- Free storage: 2Gb***
-***- RAM         : 1Gb***
-***- CPU         : Any single core 1.0GHz***
+***Minimum requirement:***\n
+***- Free storage: 2Gb***\n
+***- RAM         : 1Gb***\n
+***- CPU         : Any single core 1.0GHz***\n
 
 #################################################################################################################
 
