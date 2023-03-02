@@ -129,17 +129,7 @@ class Decryptor:
             self.order_setting()
         
         return [decrypted]
-        
-################################################################################################
-if __name__=="__main__":
-    system_selected = Decryptor()
-    system_selected.wheel_setting(0,1,2,3)
-    system_selected.key_setting(0, 0, 0)
-    
-    decrypted = system_selected.decryption("", # text to decrypt
-                                           []) # additional key
-    
-    print(f"Decrypted text: {decrypted}")
+
 
 
 
