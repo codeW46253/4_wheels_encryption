@@ -71,14 +71,11 @@ class Decryptor:
         """rechange(wheel for character input referencing, wheel for character output
         referencing, code, shift key, additional lock, combination [from order_setting]"""
         index_of_item = alpha_from_wheel.index(code)
-        new_index = index_of_item
-        
-        print(new_index)
+        new_index = index_of_item - shift_key
         
         if lock & comb != 0:
             new_index += wheel_setup.alpha_len
             
-        new_index -= shift_key
         
         return alpha_to_wheel[new_index]
      
@@ -108,9 +105,11 @@ class Decryptor:
                                        single_pswrd,
                                        self.order[2][j])
                 
+                dcr_alpha = result
+
                 self.order_setting() # update order setting
             
-            decrypted += result
+            decrypted += dcr_alpha
             
             # incrementer
             self.encr_key1 += 1
