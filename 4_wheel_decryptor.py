@@ -107,7 +107,7 @@ class Decryptor:
                                        dcr_alpha,
                                        self.order[3][j],
                                        single_pswrd,
-                                       self.order[2][0])
+                                       self.order[2][j])
                 
                 self.order_setting() # update order setting
             
