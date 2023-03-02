@@ -110,9 +110,21 @@ For setting the referencing wheels, you can follow this:
 This method only preserves the limit of encryption or decryption proccesses's steps. This method should be setted the same
 as number wheels \[main, 1, 2, 3 and 4]
 
+# Number of possible key combination \[basic settings]
 
+|Type|Quantity|
+|:---|---:|
+|Number of shift key|3|
+|Number of shift key's possible number| lenght of `main_wheel` \[69]|
+|Number of changeable wheel step|4|
 
+|Combination|Number|Quantity|
+|:---|:---:|---:|
+|Shift key|69 x 3 = 207|
+|Wheels|4! = 4 x 3 x 2 x 1|24|
+|Total|207 x 24|4968|
 
+Number of possible encryption is 4968 combinations for a basic settings
 
 
 
