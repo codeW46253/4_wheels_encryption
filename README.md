@@ -105,7 +105,14 @@ Each wheel can have different combination. The number of possible combination \[
 |Wheel|Number of combination|
 |:---|---:|
 |Main|1|
-|1 - 4|1.711224524e98|
+|1|1.711224524e98 - 1|
+|2|1.711224524e98 - 2|
+|3|1.711224524e98 - 3|
+|4|1.711224524e98 - 4|
+
+To set a wheel's character arrangement, you can use `random_arrangement_generator.py`. You also can change the availability of any character by editting the content of `alpha` variable.
+
+
 
 
 
