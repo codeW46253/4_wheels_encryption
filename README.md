@@ -2,7 +2,7 @@
 
 #################################################################################################################
 v0.0.1
-Thursday - 2/3/2023
+Time created: Thursday - 2/3/2023
 
 Minimum requirement:
 - Free storage: 2Gb
@@ -11,7 +11,7 @@ Minimum requirement:
 
 #################################################################################################################
 
-# An encryption and decryption from wheel swapping alphabet
+Wheel encryption is an encryption that taking a set of wheels to swapping alphabet.
 
 ## Encryption of a text is following this step:
 1) search for the first character in a `main_wheel`
@@ -67,6 +67,17 @@ Repeat from start and add 1 to `shift_key_1` for the next character in a text. I
 Repeat from start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to `shift_key_2` and `shift_key_3`.
 
 **At the end of encryption, you will get the encrypted text and a list of additional key for each individual characters. The decryption step will ask for encrypted text and a list of additional key to decrypt the text. The encryption and decryption process wiil be succesful if the wheels combination and shift keys are correct.**
+
+## Understanding the `wheel_setup` library:
+
+The `wheel_setup` library stores all wheel sets. The arrangement of characters should be randomized except for `main_wheel`. The arrangement also should be different from other wheels. All characters should be available in all wheel to avoid any error.
+
+Each wheel can have different combination. The number of possible combination \[for 69 characters] is calculated in the table below:
+
+|Wheel|Number of combination|
+|:---|---:|
+|Main|1|
+|1-4|1.711224524e98|
 
 ## Understanding the `order_setting` function in `Encryptor` and `Decryptor` classes:
 
