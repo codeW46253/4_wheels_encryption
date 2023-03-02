@@ -15,9 +15,11 @@ Minimum requirement:
 
 Wheel encryption is an encryption that taking a set of wheels to swapping alphabet.
 
+
+
 ## Encryption of a text is following this step:
 1) search for the first character in a `main_wheel`
-2) add the `shift_key_1` and the **index** of the **first character**
+2) add the `shift_key_1` and the index of the first character
    
    if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
    
@@ -26,63 +28,90 @@ Wheel encryption is an encryption that taking a set of wheels to swapping alphab
 3) search for a new character from `Wheel 1`
 4) use the selected character and search for the character in `wheel_2`
 5) add the `shift_key_2` and the index of the new character
+   
    if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   
    add `bit_2` to `create_additional_key`
+   
 6) search for a new character from `wheel_3`
 7) use the selected character and search for the character in `wheel_4`
 8) add the `shift key 3` and the index of the new character
+   
    if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   
    add `bit_3` to `create_additional_key`
+   
 9) search for next character from `wheel_3`
 10) use the selected character and search for the character in `wheel_2`
 11) add the `shift_key_2` and the index of the new character
+   
    if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   
    add `bit_4` to `create_additional_key`
+   
 12) search for next character from `wheel_1`
 13) use the selected character and search for the character in `main_wheel`
 14) add the `shift_key_1` and the index of the new character
+   
    if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
    add `bit_5` to `create_additional_key`
+   
 15) search for final character from `main_wheel`
 
-Repeat from start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to `shift_key_2` and `shift_key_3`.
+Repeat from the start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to `shift_key_2` and `shift_key_3`.
+
+
 
 ## Decryption of an encrypted text is following this step:
 1) search for the first character in `main_wheel`
 2) subtract the index of the character and `shift_key_1`
+
    if `additional_key` & `lock_bit_1` not equal to 0, add index and lenght of `main_wheel`
+   
 3) search the character in `wheel_1`
 4) search for the next character in `wheel_2`
 5) subtract the index of the character and `shift_key_2`
+   
    if `additional_key` & `lock_bit_2` not equal to 0, add index and lenght of `main_wheel`
+   
 6) search the character in `wheel_3`
 7) search for the next character in `wheel_4`
 8) subtract the index of the character and `shift_key_3`
+   
    if `additional_key` & `lock_bit_3` not equal to 0, add index and lenght of `main_wheel`
+   
 9) search the character in `wheel_3`
 10) search for the next character in `wheel_2`
 11) subtract the index of the character and `shift_key_2`
+   
    if `additional_key` & `lock_bit_4` not equal to 0, add index and lenght of `main_wheel`
+   
 12) search the character in `wheel_1`
 13) search for the next character in `main_wheel`
 14) subtract the index of the character and `shift_key_1`
+   
    if `additional_key` & `lock_bit_5` not equal to 0, add index and lenght of `main_wheel`
+   
 15) search for final character from `main_wheel`
 
-Repeat from start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to `shift_key_2` and `shift_key_3`.
+Repeat from the start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to `shift_key_2` and `shift_key_3`.
 
-**At the end of encryption, you will get the encrypted text and a list of additional key for each individual characters. The decryption step will ask for encrypted text and a list of additional key to decrypt the text. The encryption and decryption process wiil be succesful if the wheels combination and shift keys are correct.**
+**At the end of the encryption, you will get the encrypted text and a list of additional key for each individual characters. The decryption step will ask for encrypted text and a list of additional key to decrypt the text. The encryption and decryption process wiil be succesful if the wheels combination and shift keys are correct.**
+
+
 
 ## Understanding the `wheel_setup` library:
 
-The `wheel_setup` library stores all wheel sets. The arrangement of characters should be randomized except for `main_wheel`. The arrangement also should be different from other wheels. All characters should be available in all wheel to avoid any error.
+The `wheel_setup` library stores all encryption swap-wheels. The arrangement of characters should be randomized except for `main_wheel`. The arrangement also should be different from other wheels. All characters should be available in all wheel to avoid any error.
 
 Each wheel can have different combination. The number of possible combination \[for 69 characters] is calculated in the table below:
 
 |Wheel|Number of combination|
 |:---|---:|
 |Main|1|
-|1-4|1.711224524e98|
+|1 - 4|1.711224524e98|
+
+
 
 ## Understanding the `order_setting` function in `Encryptor` and `Decryptor` classes:
 
