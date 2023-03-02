@@ -2,9 +2,7 @@
 
 #################################################################################################################
 
-v0.0.1
-
-Time created: Thursday - 2/3/2023
+Wheel encryption is an encryption that taking a set of wheels to swapping alphabet.
 
 Minimum requirement:
 - **Free storage: 2Gb**
@@ -12,8 +10,6 @@ Minimum requirement:
 - **CPU         : Any single core 1.0GHz**
 
 #################################################################################################################
-
-Wheel encryption is an encryption that taking a set of wheels to swapping alphabet.
 
 
 
