@@ -129,17 +129,6 @@ class Encryptor:
         
         return [encrypted, a_key]
     
-################################################################################################
-if __name__=="__main__":
-    system_selected = Encryptor()
-    system_selected.wheel_setting(0,1,2,3)
-    system_selected.key_setting(0,0,0)
-    
-    encrypted, key = system_selected.encryption("relax only") # text to encrypt
-    
-    print(f"Encrypted text: {encrypted}") 
-    print(f"Additional key: {key})
-    
 		  
 		  
 		  
