@@ -1,4 +1,4 @@
-# 4_wheels_encryption
+# 4 Wheels Encryption
 
 #################################################################################################################
 v0.0.1
@@ -11,39 +11,42 @@ Minimum requirement:
 
 #################################################################################################################
 
-##An encryption and decryption from wheel swapping alphabet
+# An encryption and decryption from wheel swapping alphabet
 
-###Encryption of a text is following this step:
-1) search for the first character in a `main wheel` \[character availability list]
-2) use the index of the **first character**
-3) add the `first shift key`
-   if the total is equal to or more than lenght of `Main list`, take a remainder of the total divided by lenght of `Main wheel`
-5) search for a new character from next wheel
-6) use the new selected character and search for the character in next wheel
-7) use the index of the cheracter \[add the `second shift key`] and search for next character from next wheel
-8) use the new selected character and search for the character in next wheel
-9) use the index of the cheracter \[add the `third shift key`] and search for next character from next wheel
-10) use the new selected character and search for the character in next wheel
-11) use the index of the cheracter \[add the `second shift key`] and search for next character from previous wheel
-12) use the new selected character and search for the character in main wheel
-13) use the index of the cheracter \[add the `first shift key`] and search for next character from main wheel
+## Encryption of a text is following this step:
+1) search for the first character in a `main_wheel`
+2) add the `shift_key_1` and the **index** of the **first character**
+   if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   add `bit_1` to `create_additional_key`
+3) search for a new character from `Wheel 1`
+4) use the selected character and search for the character in `wheel_2`
+5) add the `shift_key_2` and the index of the new character
+   if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   add `bit_2` to `create_additional_key`
+6) search for a new character from `wheel_3`
+7) use the selected character and search for the character in `wheel_4`
+8) add the `shift key 3` and the index of the new character
+   if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   add `bit_3` to `create_additional_key`
+9) search for next character from `wheel_3`
+10) use the selected character and search for the character in `wheel_2`
+11) add the `shift_key_2` and the index of the new character
+   if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   add `bit_4` to `create_additional_key`
+12) search for next character from `wheel_1`
+13) use the selected character and search for the character in `main_wheel`
+14) add the `shift_key_1` and the index of the new character
+   if the total is equal to or more than lenght of `main_wheel`, take a remainder of the total divided by lenght of `main_wheel`
+   add `bit_5` to `create_additional_key`
+15) search for final character from `main_wheel`
+
+Repeat from start and add 1 to `shift_key_1` for the next character in a text. If `shift_key_1` equal to or more than the lenght
+of `main_wheel`, take the remainder of the total divided by `main_wheel` and add 1 to `shift_key_2`. Then does the same to
+`shift_key_2` and `shift_key_3`
 
 Decryption of an encrypted text is following this step:
-1) search for the first character in a main wheel \[character availability list]
-2) use the index of the first character \[check for additional key for adding 69/lenght of main wheel then
-   subtract with first shift key] and search for a character from a wheel
-3) use the new selected character and search for the character in next wheel
-4) use the index of the cheracter \[check for additional key for adding 69/lenght of main wheel then
-   subtract with first shift key] and search for next character from next wheel
-5) use the new selected character and search for the character in next wheel
-6) use the index of the cheracter \[check for additional key for adding 69/lenght of main wheel then
-   subtract with first shift key] and search for next character from next wheel
-7) use the new selected character and search for the character in next wheel
-8) use the index of the cheracter \[check for additional key for adding 69/lenght of main wheel then
-   subtract with first shift key] and search for next character from previous wheel
-9) use the new selected character and search for the character in main wheel
-10) use the index of the cheracter \[check for additional key for adding 69/lenght of main wheel then
-   subtract with first shift key] and search for next character from main wheel
+1) search for the first character in a `main wheel`
+2) use
 
 At the end of encryption, you will get the encrypted text and a list of additional key for each individual
 characters. The decryption step will ask for encrypted text and a list of additional key to decrypt the text.
