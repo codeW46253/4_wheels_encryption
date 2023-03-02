@@ -120,7 +120,7 @@ as number wheels \[main, 1, 2, 3 and 4]
 
 |Combination|Number|Quantity|
 |:---|:---:|---:|
-|Shift key|69 x 3 = 207|
+|Shift key|69 x 3|207|
 |Wheels|4! = 4 x 3 x 2 x 1|24|
 |Total|207 x 24|4968|
 
