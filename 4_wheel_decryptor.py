@@ -76,8 +76,7 @@ class Decryptor:
         print(new_index)
         
         if lock & comb != 0:
-            new_index 
-            new_index 
+            new_index += wheel_setup.alpha_len
             
         new_index -= shift_key
         
