@@ -9,7 +9,7 @@ import random
 
 def rand_arrange():
     # change this for availability of characters
-    alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!@#$%^&*()-_=+[]{}<>|\'\";:/?., \n\t"
+    alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!@#$%^&*()-_=+[]{}<>|\'\";:/\\., \n\t"
     alpha_list = []
     alpha_len = 0
 
