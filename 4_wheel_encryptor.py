@@ -68,7 +68,7 @@ class Encryptor:
 ################################################################################################
 # code for character/alphabet swap
     def change(self, from_wheel, to_wheel, code, shift_key):
-		"""rechange(wheel for character input referencing, wheel for character output
+        """rechange(wheel for character input referencing, wheel for character output
         referencing, code, shift key, additional lock, combination [from order_setting]"""
         index_of_item = from_wheel.index(code)
         new_index = index_of_item + shift_key
@@ -107,9 +107,11 @@ class Encryptor:
                 if result[1]:
                     create_a_key += self.order[2][j]
                 
+                encr_alpha = result[0]
+
                 self.order_setting() # update order setting
             
-            encrypted += result[0]
+            encrypted += encr_alpha
             a_key.append(create_a_key)
             
             # incrementer
