@@ -2,7 +2,7 @@
 
 #################################################################################################################
 
-Wheel encryption is an encryption that taking a set of wheels to swapping alphabet.
+Wheel encryption is an encryption that taking a set of wheels as an array of characters to swapping alphabet.
 
 Minimum requirement:
 - **Free storage: 2Gb**
